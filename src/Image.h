@@ -11,7 +11,7 @@ class Image{
  private :
 
   Pixel * tab;     // le tableau 1D de pixel
-  unsigned int dimx, dimy;       // les dimensions de l'image
+        // les dimensions de l'image
 
   // Toutes les variables que nous aurons besoin pour inclure SDL2
   // au module
@@ -33,6 +33,8 @@ class Image{
 
 
  public :
+
+    unsigned int dimx, dimy; 
 
    // Constructeur par défaut de la classe: initialise dimx et dimy à 0
    // ce constructeur n'alloue pas de pixel

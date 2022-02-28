@@ -4,7 +4,7 @@ Pixel::Pixel (){ r = g = b = 0; }
 
 Pixel::Pixel (const unsigned char &nr, const unsigned char &ng, const unsigned char &nb){ r = nr; g = ng; b = nb; }
 
-const unsigned char& Pixel::getRouge()const{ return r; }
+unsigned char Pixel::getRouge()const{ return r; }
 
 const unsigned char& Pixel::getVert ()const{ return g; }
 

@@ -17,7 +17,7 @@ class Pixel{
   Pixel (const unsigned char &nr, const unsigned char &ng, const unsigned char &nb);
 
    // Accesseur : récupère la composante rouge du pixel
-  const unsigned char &getRouge()const;
+  unsigned char getRouge()const;
 
    // Accesseur : récupère la composante verte du pixel
   const unsigned char &getVert ()const;

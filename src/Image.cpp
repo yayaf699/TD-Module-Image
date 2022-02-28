@@ -1,5 +1,5 @@
 #include "Image.h"
-#include <cassert>
+#include <assert.h>
 #include <iostream>
 #include <fstream>
 
@@ -34,17 +34,18 @@ void Image::setPix (unsigned int x, unsigned y, const Pixel &couleur){
 }
 
 void Image::dessinerRectangle (unsigned int Xmin,unsigned int Ymin,unsigned int Xmax,unsigned int Ymax, const Pixel &couleur){
-	assert(Xmax <= dimx);
-	assert(Ymax <= dimy);
-	for(unsigned int i = Xmin; i < Xmax; i++){
-		for(unsigned int j = Ymin; j < Ymax; j++){
+	assert(Xmax < dimx);
+	assert(Ymax < dimy);
+	for(unsigned int i = Xmin; i <= Xmax; i++){
+		for(unsigned int j = Ymin; j <= Ymax; j++){
 			setPix(i, j, couleur);
 		}
 	}
 }
 
 void Image::effacer (const Pixel &couleur){
-	dessinerRectangle(0, 0, dimx, dimy, couleur);
+	dessinerRectangle(0, 0, dimx-1, dimy-1, couleur);
+	
 }
 
 void Image::testRegression (){
@@ -82,19 +83,21 @@ void Image::sauver(const std::string & filename) const {
 void Image::ouvrir(const std::string & filename) {
     std::ifstream fichier (filename.c_str());
     assert(fichier.is_open());
-	unsigned char r,g,b;
+	unsigned int r, g, b;
 	std::string mot;
 	dimx = dimy = 0;
 	fichier >> mot >> dimx >> dimy >> mot;
 	assert(dimx > 0 && dimy > 0);
 	if (tab != NULL) delete [] tab;
 	tab = new Pixel [dimx*dimy];
+	Pixel pix;
     for(unsigned int y=0; y<dimy; ++y)
         for(unsigned int x=0; x<dimx; ++x) {
-            getPix(x,y).setRouge(r);
-            getPix(x,y).setVert(g);
-            getPix(x,y).setBleu(b);
             fichier >> r >> g >> b;
+            pix.setRouge(r);
+            pix.setVert(g);
+            pix.setBleu(b);
+            setPix(x,y,pix);
         }
     fichier.close();
     std::cout << "Lecture de l'image " << filename << " ... OK\n";
@@ -104,7 +107,7 @@ void Image::afficherConsole(){
     std::cout << dimx << " " << dimy << std::endl;
     for(unsigned int y=0; y<dimy; ++y) {
         for(unsigned int x=0; x<dimx; ++x) {
-            Pixel pix = getPix(x,y);
+            Pixel &pix = getPix(x,y);
             std::cout << +pix.getRouge() << " " << +pix.getVert() << " " << +pix.getBleu() << " ";
         }
         std::cout << std::endl;
