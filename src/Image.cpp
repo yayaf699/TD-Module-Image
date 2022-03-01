@@ -130,6 +130,7 @@ void Image::afficherInit(){
 	SDL_Surface *tmp = IMG_Load("./data/imageAfficher.ppm");
 	texture = SDL_CreateTextureFromSurface(renderer, tmp);
 	SDL_FreeSurface(tmp);
+	rect.x = 200/2 - dimx/2; rect.y = 200/2 - dimy/2;
 	rect.w = dimx; rect.h = dimy;
 	
 }
@@ -148,8 +149,10 @@ void Image::afficherBoucle(){
 			              // Si une touche est enfoncee
 				switch (events.key.keysym.scancode){
                     case SDL_SCANCODE_G: rect.w-=10; rect.h-=10;
+                    rect.x+=5; rect.y +=5;
                     	break;
                     case SDL_SCANCODE_T: rect.w+=10; rect.h+=10;
+                    rect.x-=5; rect.y -=5;
                     	break;
                     case SDL_SCANCODE_ESCAPE:
                     case SDL_SCANCODE_Q:

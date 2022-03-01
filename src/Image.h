@@ -17,7 +17,7 @@ class Image{
   // au module
   SDL_Window * window;
   SDL_Renderer * renderer;
-  SDL_Rect rect{0, 0};
+  SDL_Rect rect;
   SDL_Texture * texture;
   SDL_Surface * surface;
 
