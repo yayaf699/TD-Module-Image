@@ -1,3 +1,14 @@
+/**
+ * @file mainExemple.cpp
+ * @author Yanisse FERHAOUI | Jounaid BOUDEFAR
+ * @brief Programme principal qui fait appel aux fonctions "ouvrir" et "sauver" et qui va créer et remplir 2 images.
+ * 
+ * @date 2022-03-03
+ * 
+ * 
+ * 
+ */
+
 #include "Image.h"
 #include <iostream>
  

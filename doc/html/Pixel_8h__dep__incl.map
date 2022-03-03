@@ -1,0 +1,9 @@
+<map id="src/Pixel.h" name="src/Pixel.h">
+<area shape="rect" id="node1" title="Déclaration de la classe Pixel, ainsi que ses variables et ses fonctions membres." alt="" coords="338,5,426,32"/>
+<area shape="rect" id="node2" href="$Image_8h.html" title="Déclaration de la classe Image, ainsi que ses variables et ses fonctions membres." alt="" coords="270,80,369,107"/>
+<area shape="rect" id="node7" href="$Pixel_8cpp.html" title="Implémentation de la classe Pixel." alt="" coords="393,80,496,107"/>
+<area shape="rect" id="node3" href="$Image_8cpp.html" title="Implémentation de la classe Image." alt="" coords="5,155,119,181"/>
+<area shape="rect" id="node4" href="$mainAffichage_8cpp.html" title="Programme principal qui affiche une fenêtre SDL2 avec à remplir à l&#39;intérieur le contenu souhaité." alt="" coords="143,155,309,181"/>
+<area shape="rect" id="node5" href="$mainExemple_8cpp.html" title="Programme principal qui fait appel aux fonctions &quot;ouvrir&quot; et &quot;sauver&quot; et qui va créer et remplir 2 im..." alt="" coords="333,155,495,181"/>
+<area shape="rect" id="node6" href="$mainTest_8cpp.html" title="Programme principal qui fait appel à la fonction réalisant le test de regression." alt="" coords="519,155,650,181"/>
+</map>

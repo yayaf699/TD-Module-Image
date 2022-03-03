@@ -1,10 +1,24 @@
+/**
+ * @file Image.cpp
+ * @author Yanisse FERHAOUI | Jounaid BOUDEFAR
+ * @brief Implémentation de la classe Image.
+ * 
+ * @date 2022-03-03
+ * 
+ * 
+ * 
+ */
+
 #include "Image.h"
 #include <assert.h>
 #include <iostream>
 #include <fstream>
 
 
-Image::Image (){ dimx = dimy = 0; tab = nullptr; } // on n'alloue pas de pixel => tab pointe sur rien du tout pour l'instant
+Image::Image (){
+
+    dimx = dimy = 0; tab = nullptr; } // on n'alloue pas de pixel => tab pointe sur rien du tout pour l'instant
+
 
 Image::Image (unsigned int dimensionX, unsigned int dimensionY) {
 	assert(dimensionX > 0); // on verifie la condition que les dimensions en parametres sont strictement
@@ -14,11 +28,13 @@ Image::Image (unsigned int dimensionX, unsigned int dimensionY) {
 	tab = new Pixel[dimx*dimy];
 }
 
+
 Image::~Image (){ if(tab != nullptr) delete [] tab; tab = NULL; dimx = dimy = 0; }
+
 
 Pixel &Image::getPix (unsigned int x, unsigned int y) const{
 	assert(x < dimx);
-	assert(x >= 0); // on verifie que les coordonnees appartiennent bien a l'image
+	assert(x >= 0); 
 	assert(y < dimy); 
 	assert(y >= 0);
 	return tab[y*dimx+x];
@@ -33,6 +49,8 @@ void Image::setPix (unsigned int x, unsigned y, const Pixel &couleur){
 	tab[y*dimx+x].setBleu(couleur.getBleu());
 }
 
+
+
 void Image::dessinerRectangle (unsigned int Xmin,unsigned int Ymin,unsigned int Xmax,unsigned int Ymax, const Pixel &couleur){
 	assert(Xmax < dimx);
 	assert(Ymax < dimy);
@@ -43,10 +61,12 @@ void Image::dessinerRectangle (unsigned int Xmin,unsigned int Ymin,unsigned int 
 	}
 }
 
+
 void Image::effacer (const Pixel &couleur){
 	dessinerRectangle(0, 0, dimx-1, dimy-1, couleur);
 	
 }
+
 
 void Image::testRegression (){
 	unsigned int i = 2;
@@ -62,6 +82,7 @@ void Image::testRegression (){
 	std::cout << "couleur du pixel pix" << std::endl;
 	std::cout << +pix.getRouge() << " " << +pix.getBleu() << " " << +pix.getVert() << std::endl;
 	im.afficherConsole();
+	delete [] im.tab;
 }
 
 
@@ -103,6 +124,7 @@ void Image::ouvrir(const std::string & filename) {
     std::cout << "Lecture de l'image " << filename << " ... OK\n";
 }
 
+
 void Image::afficherConsole(){
     std::cout << dimx << " " << dimy << std::endl;
     for(unsigned int y=0; y<dimy; ++y) {
@@ -113,6 +135,7 @@ void Image::afficherConsole(){
         std::cout << std::endl;
     }
 }
+
 
 void Image::afficherInit(){
 	assert(SDL_Init(SDL_INIT_VIDEO) >= 0);
@@ -134,6 +157,7 @@ void Image::afficherInit(){
 	rect.w = dimx; rect.h = dimy;
 	
 }
+
 
 void Image::afficherBoucle(){
 	SDL_Event events;
@@ -165,14 +189,17 @@ void Image::afficherBoucle(){
 	}
 }
 
+
 void Image::afficherDetruit(){
 	
+	remove("./data/imageAfficher.ppm");
 	SDL_DestroyRenderer(renderer);
 	SDL_FreeSurface(surface);
 	SDL_DestroyTexture(texture);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
+
 
 void Image::afficher(){
 	afficherInit();

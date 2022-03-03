@@ -1,7 +1,19 @@
+/**
+ * @file Pixel.h
+ * @author Yanisse FERHAOUI | Jounaid BOUDEFAR
+ * @brief Déclaration de la classe Pixel, ainsi que ses variables et ses fonctions membres.
+ * @date 2022-03-03
+ * 
+ * 
+ */
+
 #ifndef _PIXEL
 #define _PIXEL
 
-
+/**
+ * @brief Classe Pixel
+ * 
+ */
 class Pixel{
 
  private :
@@ -10,28 +22,60 @@ class Pixel{
 
  public :
 
-   // Constructeur par défaut de la classe: initialise le pixel à la couleur noire
+  /**
+   * @brief Constructeur par défaut de la classe: initialise le pixel à la couleur noire
+  */
   Pixel ();
 
-   // Constructeur de la classe: initialise r,g,b avec les paramètres
+  /**
+   * @brief Constructeur de la classe: initialise r,g,b avec les paramètres
+   * 
+   * @param[in] nr Couleur rouge du pixel
+   * @param[in] ng Couleur verte du pixel
+   * @param[in] nb Couleur bleue du pixel
+   */
   Pixel (const unsigned char &nr, const unsigned char &ng, const unsigned char &nb);
 
-   // Accesseur : récupère la composante rouge du pixel
-  unsigned char getRouge()const;
+  /**
+   * @brief Accesseur : récupère la composante rouge du pixel
+   * 
+   * @return const unsigned char& 
+   */
+  const unsigned char &getRouge()const;
 
-   // Accesseur : récupère la composante verte du pixel
+  /**
+   * @brief Accesseur : récupère la composante verte du pixel
+   * 
+   * @return const unsigned char& 
+   */
   const unsigned char &getVert ()const;
 
-   // Accesseur : récupère la composante bleue du pixel
+  /**
+   * @brief Accesseur : récupère la composante bleue du pixel
+   * 
+   * @return const unsigned char& 
+   */
   const unsigned char &getBleu ()const;
 
-   // Mutateur : modifie la composante rouge du pixel
+  /**
+   * @brief Mutateur : modifie la composante rouge du pixel
+   * 
+   * @param[in] nr Couleur rouge du pixel à récupérer
+   */
   void setRouge(unsigned char nr);
 
-   // Mutateur : modifie la composante verte du pixel
+  /**
+   * @brief Mutateur : modifie la composante verte du pixel
+   * 
+   * @param[in] ng Couleur verte du pixel à récupérer
+   */
   void setVert (unsigned char ng);
 
-   // Mutateur : modifie la composante bleue du pixel
+  /**
+   * @brief Mutateur : modifie la composante bleue du pixel
+   * 
+   * @param[in] nb Couleur bleue du pixel à récupérer
+   */
   void setBleu (unsigned char nb);
 
 };

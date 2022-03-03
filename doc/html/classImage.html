@@ -69,36 +69,53 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Classe <a class="el" href="classImage.html" title="Classe Image.">Image</a>.  
+ <a href="classImage.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Image_8h_source.html">Image.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a58edd1c45b4faeb5f789b0d036d02313"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a58edd1c45b4faeb5f789b0d036d02313">Image</a> ()</td></tr>
+<tr class="memdesc:a58edd1c45b4faeb5f789b0d036d02313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par défaut de la classe: initialise dimx et dimy à 0, ce constructeur n'alloue pas de pixel.  <a href="classImage.html#a58edd1c45b4faeb5f789b0d036d02313">More...</a><br /></td></tr>
 <tr class="separator:a58edd1c45b4faeb5f789b0d036d02313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a781829417e05ac62d5c1ea090a8844d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a781829417e05ac62d5c1ea090a8844d1">Image</a> (unsigned int dimensionX, unsigned int dimensionY)</td></tr>
+<tr class="memdesc:a781829417e05ac62d5c1ea090a8844d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe: initialise dimx et dimy (après vérification) puis alloue le tableau de pixel dans le tas (image noire).  <a href="classImage.html#a781829417e05ac62d5c1ea090a8844d1">More...</a><br /></td></tr>
 <tr class="separator:a781829417e05ac62d5c1ea090a8844d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0294f63700543e11c0f0da85601c7ae5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a0294f63700543e11c0f0da85601c7ae5">~Image</a> ()</td></tr>
+<tr class="memdesc:a0294f63700543e11c0f0da85601c7ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe: déallocation de la mémoire du tableau de pixels et mise à jour des champs dimx et dimy à 0.  <a href="classImage.html#a0294f63700543e11c0f0da85601c7ae5">More...</a><br /></td></tr>
 <tr class="separator:a0294f63700543e11c0f0da85601c7ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a761913306289b49fe427004170124ce4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPixel.html">Pixel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a761913306289b49fe427004170124ce4">getPix</a> (unsigned int x, unsigned int y) const</td></tr>
+<tr class="memdesc:a761913306289b49fe427004170124ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur : récupère le pixel original de coordonnées (x,y) en vérifiant leur validité.  <a href="classImage.html#a761913306289b49fe427004170124ce4">More...</a><br /></td></tr>
 <tr class="separator:a761913306289b49fe427004170124ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad10a8e6e3471f8a67fdee4615c718ee8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ad10a8e6e3471f8a67fdee4615c718ee8">setPix</a> (unsigned x, unsigned y, const <a class="el" href="classPixel.html">Pixel</a> &amp;couleur)</td></tr>
+<tr class="memdesc:ad10a8e6e3471f8a67fdee4615c718ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur : modifie le pixel de coordonnées (x,y).  <a href="classImage.html#ad10a8e6e3471f8a67fdee4615c718ee8">More...</a><br /></td></tr>
 <tr class="separator:ad10a8e6e3471f8a67fdee4615c718ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae18101e02b43b2a2285776412cf92936"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ae18101e02b43b2a2285776412cf92936">dessinerRectangle</a> (unsigned int Xmin, unsigned int Ymin, unsigned int Xmax, unsigned int Ymax, const <a class="el" href="classPixel.html">Pixel</a> &amp;couleur)</td></tr>
+<tr class="memdesc:ae18101e02b43b2a2285776412cf92936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine un rectangle plein de la couleur dans l'image.  <a href="classImage.html#ae18101e02b43b2a2285776412cf92936">More...</a><br /></td></tr>
 <tr class="separator:ae18101e02b43b2a2285776412cf92936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62d0c277a049c0ea1da7ba2dd2131c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a62d0c277a049c0ea1da7ba2dd2131c31">effacer</a> (const <a class="el" href="classPixel.html">Pixel</a> &amp;couleur)</td></tr>
+<tr class="memdesc:a62d0c277a049c0ea1da7ba2dd2131c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Efface l'image en la remplissant de la couleur en paramètre.  <a href="classImage.html#a62d0c277a049c0ea1da7ba2dd2131c31">More...</a><br /></td></tr>
 <tr class="separator:a62d0c277a049c0ea1da7ba2dd2131c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82ffef6c89927b0cc755a3fe2fec637b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a82ffef6c89927b0cc755a3fe2fec637b">testRegression</a> ()</td></tr>
+<tr class="memdesc:a82ffef6c89927b0cc755a3fe2fec637b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectue une série de tests vérifiant que le module fonctionne et que les données membres de l'objet sont conformes.  <a href="classImage.html#a82ffef6c89927b0cc755a3fe2fec637b">More...</a><br /></td></tr>
 <tr class="separator:a82ffef6c89927b0cc755a3fe2fec637b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf51ae329fedeacd95f6fab809f313d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#adf51ae329fedeacd95f6fab809f313d5">sauver</a> (const std::string &amp;filename) const</td></tr>
+<tr class="memdesc:adf51ae329fedeacd95f6fab809f313d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde une image dans un fichier saisi en paramètres.  <a href="classImage.html#adf51ae329fedeacd95f6fab809f313d5">More...</a><br /></td></tr>
 <tr class="separator:adf51ae329fedeacd95f6fab809f313d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3696ea24faa90a9c2315e073f356960f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a3696ea24faa90a9c2315e073f356960f">ouvrir</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a3696ea24faa90a9c2315e073f356960f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre une image dont le lien du ficher est en paramètre.  <a href="classImage.html#a3696ea24faa90a9c2315e073f356960f">More...</a><br /></td></tr>
 <tr class="separator:a3696ea24faa90a9c2315e073f356960f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3cc6f7401625c11dcd5ef003f37e4fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#aa3cc6f7401625c11dcd5ef003f37e4fa">afficherConsole</a> ()</td></tr>
+<tr class="memdesc:aa3cc6f7401625c11dcd5ef003f37e4fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une image en format texte sur la console.  <a href="classImage.html#aa3cc6f7401625c11dcd5ef003f37e4fa">More...</a><br /></td></tr>
 <tr class="separator:aa3cc6f7401625c11dcd5ef003f37e4fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d957034ad17e3911a4d9f7decdda22c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a4d957034ad17e3911a4d9f7decdda22c">afficher</a> ()</td></tr>
+<tr class="memdesc:a4d957034ad17e3911a4d9f7decdda22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait appel aux 3 fonctions affichage: Affiche la fenêtre SDL2.  <a href="classImage.html#a4d957034ad17e3911a4d9f7decdda22c">More...</a><br /></td></tr>
 <tr class="separator:a4d957034ad17e3911a4d9f7decdda22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe <a class="el" href="classImage.html" title="Classe Image.">Image</a>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a58edd1c45b4faeb5f789b0d036d02313"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58edd1c45b4faeb5f789b0d036d02313">&#9670;&nbsp;</a></span>Image() <span class="overload">[1/2]</span></h2>
 
@@ -113,6 +130,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructeur par défaut de la classe: initialise dimx et dimy à 0, ce constructeur n'alloue pas de pixel. </p>
 
 </div>
 </div>
@@ -142,6 +161,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructeur de la classe: initialise dimx et dimy (après vérification) puis alloue le tableau de pixel dans le tas (image noire). </p>
+
 </div>
 </div>
 <a id="a0294f63700543e11c0f0da85601c7ae5"></a>
@@ -158,6 +179,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destructeur de la classe: déallocation de la mémoire du tableau de pixels et mise à jour des champs dimx et dimy à 0. </p>
 
 </div>
 </div>
@@ -177,6 +200,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fait appel aux 3 fonctions affichage: Affiche la fenêtre SDL2. </p>
+
 </div>
 </div>
 <a id="aa3cc6f7401625c11dcd5ef003f37e4fa"></a>
@@ -193,6 +218,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Affiche une image en format texte sur la console. </p>
 
 </div>
 </div>
@@ -240,6 +267,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Dessine un rectangle plein de la couleur dans l'image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Xmin</td><td>Plus petite coordonnée de x. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Ymin</td><td>Plus petite coordonnée de y. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Xmax</td><td>Plus grande coordonnée de x. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Ymax</td><td>Plus grande coordonnée de y. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">couleur</td><td>Couleur que le rectangle va avoir. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a62d0c277a049c0ea1da7ba2dd2131c31"></a>
@@ -257,6 +296,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Efface l'image en la remplissant de la couleur en paramètre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">couleur</td><td>Couleur qui recouvrera l'image. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -286,6 +333,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Accesseur : récupère le pixel original de coordonnées (x,y) en vérifiant leur validité. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>Coordonnée x du pixel à récupérer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Coordonnée x du pixel à récupérer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classPixel.html" title="Classe Pixel.">Pixel</a>&amp; </dd></dl>
+
 </div>
 </div>
 <a id="a3696ea24faa90a9c2315e073f356960f"></a>
@@ -304,6 +361,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Ouvre une image dont le lien du ficher est en paramètre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Lien vers l'image à ouvrir. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="adf51ae329fedeacd95f6fab809f313d5"></a>
@@ -321,6 +386,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sauvegarde une image dans un fichier saisi en paramètres. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Lien vers l'image à sauvegarder. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -356,6 +429,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Mutateur : modifie le pixel de coordonnées (x,y). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordonnée x du pixel à modifier. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordonnée y du pixel à modifier. </td></tr>
+    <tr><td class="paramname">couleur</td><td>Couleur du pixel à modifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a82ffef6c89927b0cc755a3fe2fec637b"></a>
@@ -372,6 +455,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Effectue une série de tests vérifiant que le module fonctionne et que les données membres de l'objet sont conformes. </p>
 
 </div>
 </div>

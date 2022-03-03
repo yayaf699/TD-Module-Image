@@ -1,3 +1,14 @@
+/**
+ * @file mainAffichage.cpp
+ * @author Yanisse FERHAOUI | Jounaid BOUDEFAR
+ * @brief Programme principal qui affiche une fenêtre SDL2 avec à remplir à l'intérieur le contenu souhaité.
+ * 
+ * @date 2022-03-03
+ * 
+ * 
+ * 
+ */
+
 #include "Image.h"
  
 int main (int argc, char** argv) {

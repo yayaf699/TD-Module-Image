@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['testregression_25',['testRegression',['../classImage.html#a82ffef6c89927b0cc755a3fe2fec637b',1,'Image']]]
+  ['_7eimage_25',['~Image',['../classImage.html#a0294f63700543e11c0f0da85601c7ae5',1,'Image']]]
 ];
