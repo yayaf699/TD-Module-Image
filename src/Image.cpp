@@ -17,7 +17,7 @@
 
 Image::Image (){
 
-    dimx = dimy = 0; tab = nullptr; } // on n'alloue pas de pixel => tab pointe sur rien du tout pour l'instant
+    dimx = 0; dimy = 0; tab = nullptr; } // on n'alloue pas de pixel => tab pointe sur rien du tout pour l'instant
 
 
 Image::Image (unsigned int dimensionX, unsigned int dimensionY) {
@@ -29,60 +29,130 @@ Image::Image (unsigned int dimensionX, unsigned int dimensionY) {
 }
 
 
-Image::~Image (){ if(tab != nullptr) delete [] tab; tab = NULL; dimx = dimy = 0; }
+Image::~Image (){ if(tab != nullptr && dimx != 0 && dimy != 0) delete [] tab; tab = NULL; dimx = dimy = 0; }
 
 
 Pixel &Image::getPix (unsigned int x, unsigned int y) const{
-	assert(x < dimx);
-	assert(x >= 0); 
-	assert(y < dimy); 
-	assert(y >= 0);
-	return tab[y*dimx+x];
+	if(tab != nullptr && dimx != 0 && dimy != 0){
+		assert(x < dimx);
+		assert(x >= 0); 
+		assert(y < dimy); 
+		assert(y >= 0);
+		return tab[y*dimx+x];
+	}
+	return tab[0];
 }
 
 
 void Image::setPix (unsigned int x, unsigned y, const Pixel &couleur){
-	assert(x < dimx);
-	assert(y < dimy);
-	tab[y*dimx+x].setRouge(couleur.getRouge());
-	tab[y*dimx+x].setVert(couleur.getVert());
-	tab[y*dimx+x].setBleu(couleur.getBleu());
+	if(tab != nullptr && dimx != 0 && dimy != 0){
+		assert(x < dimx);
+		assert(y < dimy);
+		tab[y*dimx+x].setRouge(couleur.getRouge());
+		tab[y*dimx+x].setVert(couleur.getVert());
+		tab[y*dimx+x].setBleu(couleur.getBleu());
+	}
+	else{
+		Pixel pix(couleur.getRouge(), couleur.getVert(), couleur.getBleu());
+		tab = &pix;
+	}
 }
 
 
 
 void Image::dessinerRectangle (unsigned int Xmin,unsigned int Ymin,unsigned int Xmax,unsigned int Ymax, const Pixel &couleur){
-	assert(Xmax < dimx);
-	assert(Ymax < dimy);
-	for(unsigned int i = Xmin; i <= Xmax; i++){
+	if(tab != nullptr && dimx != 0 && dimy != 0){
+		assert(Xmax < dimx);
+		assert(Ymax < dimy);
 		for(unsigned int j = Ymin; j <= Ymax; j++){
-			setPix(i, j, couleur);
+			for(unsigned int i = Xmin; i <= Xmax; i++){
+			
+				setPix(i, j, couleur);
+			}
 		}
 	}
+	else setPix(0, 0, couleur);
 }
 
 
 void Image::effacer (const Pixel &couleur){
-	dessinerRectangle(0, 0, dimx-1, dimy-1, couleur);
-	
+	if(tab != nullptr && dimx != 0 && dimy != 0){
+		dessinerRectangle(0, 0, dimx-1, dimy-1, couleur);
+	}
+	else{
+		Pixel pix(couleur.getRouge(), couleur.getVert(), couleur.getBleu());
+		tab = &pix;
+	}
 }
 
 
 void Image::testRegression (){
-	unsigned int i = 2;
-	Image im(50*i, 75*i);
-	assert(im.dimx == 50*i);
-	assert(im.dimy == 75*i);
+
+	//Déclarations de couleurs pour les tests
+	Pixel beige (244, 240, 172);
+	Pixel vert (8, 212, 2);
+
+	//Les assert de l'image déclarée dans le main
+	assert(dimx == 0);
+	assert(dimy == 0);
+	assert(tab == nullptr);
+
+	//Déclarations + asserts d'une image de dimensions > 0
+	Image im(100, 150);
 	assert(im.tab != nullptr);
-	Pixel pix(25, 25, 3);
-	Pixel &pix2 = im.getPix(34, 99); 
-	im.setPix(89, 55, pix2);
-	im.dessinerRectangle(5, 2, 54, 98, pix);
-	im.effacer(pix);
-	std::cout << "couleur du pixel pix" << std::endl;
-	std::cout << +pix.getRouge() << " " << +pix.getBleu() << " " << +pix.getVert() << std::endl;
-	im.afficherConsole();
-	delete [] im.tab;
+	assert(im.dimx == 100);
+	assert(im.dimy == 150);
+
+
+
+	//Tests dessinerRectangle
+	im.dessinerRectangle(5, 2, 54, 98, beige);
+	for(unsigned int j = 2; j <= 98; ++j){
+		for(unsigned i = 5; i <= 54; ++i){
+			assert(im.getPix(i, j).getRouge() == beige.getRouge());
+			assert(im.getPix(i, j).getVert() == beige.getVert());
+			assert(im.getPix(i, j).getBleu() == beige.getBleu());
+		}
+	}
+
+	dessinerRectangle(0, 0, 0, 0, vert);
+	assert(tab->getRouge() == vert.getRouge());
+	assert(tab->getVert() == vert.getVert());
+	assert(tab->getBleu() == vert.getBleu());
+
+	//Tests getPix
+	assert(im.getPix(5, 10).getRouge() == im.tab[10*im.dimx+5].getRouge());
+	assert(im.getPix(5, 10).getVert() == im.tab[10*im.dimx+5].getVert());
+	assert(im.getPix(5, 10).getBleu() == im.tab[10*im.dimx+5].getBleu());
+	assert(getPix(0, 0).getRouge() == tab->getRouge());
+	assert(getPix(0, 0).getVert() == tab->getVert());
+	assert(getPix(0, 0).getBleu() == tab->getBleu());
+
+	//Tests setPix
+	im.setPix(25, 10, vert);
+	assert(im.getPix(25, 10).getRouge() == vert.getRouge());
+	assert(im.getPix(25, 10).getVert() == vert.getVert());
+	assert(im.getPix(25, 10).getBleu() == vert.getBleu());
+	setPix(0, 0, beige);
+	assert(tab->getRouge() == beige.getRouge());
+	assert(tab->getVert() == beige.getVert());
+	assert(tab->getBleu() == beige.getBleu());
+
+
+	//Tests effacer
+	im.effacer(vert);
+	for(unsigned int j = 0; j < im.dimy; ++j){
+		for(unsigned i = 0; i < im.dimx; ++i){
+			assert(im.getPix(i, j).getRouge() == vert.getRouge());
+			assert(im.getPix(i, j).getVert() == vert.getVert());
+			assert(im.getPix(i, j).getBleu() == vert.getBleu());
+		}
+	}
+
+	effacer(beige);
+	assert(tab->getRouge() == beige.getRouge());
+	assert(tab->getVert() == beige.getVert());
+	assert(tab->getBleu() == beige.getBleu());
 }
 
 

@@ -1,5 +1,5 @@
 <map id="src/mainExemple.cpp" name="src/mainExemple.cpp">
-<area shape="rect" id="node1" title="Programme principal qui fait appel aux fonctions &quot;ouvrir&quot; et &quot;sauver&quot; et qui va créer et remplir 2 im..." alt="" coords="145,5,307,32"/>
+<area shape="rect" id="node1" title="Programme principal qui fait appel aux fonctions &quot;ouvrir&quot; et &quot;sauver&quot; et qui va générer et remplir 2 ..." alt="" coords="145,5,307,32"/>
 <area shape="rect" id="node2" href="$Image_8h.html" title="Déclaration de la classe Image, ainsi que ses variables et ses fonctions membres." alt="" coords="138,80,213,107"/>
 <area shape="rect" id="node7" title=" " alt="" coords="237,80,317,107"/>
 <area shape="rect" id="node3" href="$Pixel_8h.html" title="Déclaration de la classe Pixel, ainsi que ses variables et ses fonctions membres." alt="" coords="5,155,71,181"/>

@@ -12,6 +12,9 @@ all: $(EXEC_OUTPUT)
 clean:
 	rm $(OBJ_FILES) $(EXEC_OUTPUT)
 
+doc:
+	doxygen doc/image.doxy
+
 bin/affichage: obj/mainAffichage.o obj/Image.o obj/Pixel.o
 	$(CC) obj/mainAffichage.o obj/Image.o obj/Pixel.o -o bin/affichage $(LIBS)
 
